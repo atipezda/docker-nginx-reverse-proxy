@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   reverse_proxy:
-    image: nginx:latest
+    build: .
     container_name: "reverse_proxy"
     volumes:
       - ./default.conf.template:/etc/nginx/templates/default.conf.template
