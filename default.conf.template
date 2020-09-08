@@ -2,11 +2,11 @@ resolver 127.0.0.1 127.0.0.11 host.docker.internal valid=300s;
 
 server {
     listen 80;
-    server_name <DOMAIN>;
+    server_name frontend.test;
 
      location / {
          resolver 127.0.0.1;
-         proxy_pass       http://host.docker.internal:<PORT>/;
+         proxy_pass       http://host.docker.internal:3000/;
          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
      }
 }
