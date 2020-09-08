@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+  reverse_proxy:
+    image: nginx:latest
+    container_name: "reverse_proxy"
+    volumes:
+      - ./docker/development/ngnx:/etc/nginx/templates/
+    ports:
+      - "${REVERSE_PROXY_PORT}:80"
