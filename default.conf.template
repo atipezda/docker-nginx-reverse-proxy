@@ -4,7 +4,7 @@ server {
 
      location / {
          resolver 127.0.0.1;
-         proxy_pass http://<LOCAL>:8080/;
+         proxy_pass http://localhost:8080/;
          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
      }
 }
