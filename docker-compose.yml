@@ -1,9 +1,10 @@
-version: "3.4"
+version: "3.8"
 services:
   reverse_proxy:
     build: .
     container_name: "reverse_proxy"
-    volumes:
-      - ./default.conf.template:/etc/nginx/templates/default.conf.template
     ports:
       - "80:80"
+    deploy:
+      restart_policy:
+        delay: 10s
